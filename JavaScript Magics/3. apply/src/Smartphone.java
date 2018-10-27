@@ -65,6 +65,17 @@ public class Smartphone {
         return Objects.hash(name);
     }
 
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "name='" + name + '\'' +
+                ", brande='" + brande + '\'' +
+                ", screenDiagonal=" + screenDiagonal +
+                ", martixType=" + martixType +
+                ", price=" + price +
+                '}';
+    }
+
     public enum MartixType {
         IPS, SuperAmoled, OLED, Other
     }
