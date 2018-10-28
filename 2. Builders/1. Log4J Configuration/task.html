@@ -1,0 +1,30 @@
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/darcula.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+In this task, please write <b>Log4J</b> configuration that similar to the example below.
+For this purpose, please use the <code>config</code> function that defined in the
+<u style="color: cornflowerblue">Log4jConfig.kt</u> file.
+<pre><code class="xml">
+  &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+  &lt;Configuration status=&quot;WARN&quot;&gt;
+  &lt;Appenders&gt;
+    &lt;Console name=&quot;Console&quot; target=&quot;SYSTEM_OUT&quot;&gt;
+      &lt;PatternLayout pattern=&quot;%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&quot;/&gt;
+    &lt;/Console&gt;
+  &lt;/Appenders&gt;
+  &lt;Loggers&gt;
+    &lt;Root level=&quot;error&quot;&gt;
+      &lt;AppenderRef ref=&quot;Console&quot;/&gt;
+    &lt;/Root&gt;
+  &lt;/Loggers&gt;
+&lt;/Configuration&gt;
+</code></pre>
+<br>
+<br>
+<div class="hint">
+  This task demonstrates how to increase code readability with
+  <a href="https://kotlinlang.org/docs/reference/functions.html#default-arguments">default</a> and
+  <a href="https://kotlinlang.org/docs/reference/functions.html#named-arguments">named</a> arguments.
+</div>
+</html>
