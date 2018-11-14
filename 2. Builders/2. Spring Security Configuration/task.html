@@ -1,0 +1,23 @@
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/darcula.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+Bellow you can see some examples of the Spring Security configs. Try to rewrite them with prepared in this task
+DSL functions (please see <u style="color: cornflowerblue">SpringSecurityDSL.kt</u> file).
+<pre><code class="java">
+public UserDetailsService userDetailsService() throws Exception {
+    InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
+    manager.createUser(User.withDefaultPasswordEncoder().username("user").password("password").roles("USER").build());
+    return manager;
+}
+
+protected void configure(HttpSecurity http) throws Exception {
+    http
+        .authorizeRequests()
+            .anyRequest().authenticated()
+            .and()
+        .formLogin()
+            .and()
+        .httpBasic();
+}
+</code></pre>

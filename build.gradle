@@ -84,10 +84,14 @@ project(':util') {
 }
 
 configure(subprojects.findAll {it.name != 'util'}) {
-  dependencies {
-    compile project(':util').sourceSets.main.output
-    testCompile project(':util').sourceSets.test.output
-  }
+    def moduleName = it.name
+    dependencies {
+        compile project(':util').sourceSets.main.output
+        testCompile project(':util').sourceSets.test.output
+        if (moduleName == '2._Builders-2._Spring_Security_Configuration') {
+            compile 'org.springframework.security:spring-security-config:5.1.1.RELEASE'
+        }
+    }
 }
 
 task wrapper(type: Wrapper) {
